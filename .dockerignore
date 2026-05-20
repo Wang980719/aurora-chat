@@ -1,0 +1,4 @@
+# Docker ignore - 排除不需要的文件
+.git
+node_modules
+*.md

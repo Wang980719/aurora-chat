@@ -1,0 +1,12 @@
+services:
+  aurora-chat:
+    image: didawang/aurora-chat:latest
+    container_name: aurora-chat
+    ports:
+      - "2479:80"
+    volumes:
+      # 挂载 HTML 文件，方便后续更新（替换文件后 docker restart 即可）
+      - ./aurora-chat.html:/usr/share/nginx/html/index.html:ro
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
